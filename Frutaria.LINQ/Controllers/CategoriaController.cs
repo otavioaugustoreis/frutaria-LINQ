@@ -3,10 +3,9 @@
 namespace Frutaria.LINQ.Controllers
 {
 
-
     [ApiController]
     [Route("[Controller]")]
-    public class FrutaController : ControllerBase
+    public class CategoriaController : ControllerBase
     {
     }
 }
