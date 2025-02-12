@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frutaria.LINQ", "Frutaria.LINQ\Frutaria.LINQ.csproj", "{652640D7-6180-4213-A7E4-6F8E94C40A79}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{652640D7-6180-4213-A7E4-6F8E94C40A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652640D7-6180-4213-A7E4-6F8E94C40A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652640D7-6180-4213-A7E4-6F8E94C40A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652640D7-6180-4213-A7E4-6F8E94C40A79}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ABC6416F-08CB-4DE7-B303-69E736526DC4}
+	EndGlobalSection
+EndGlobal

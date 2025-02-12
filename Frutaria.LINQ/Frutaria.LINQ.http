@@ -1,0 +1,6 @@
+@Frutaria.LINQ_HostAddress = http://localhost:5262
+
+GET {{Frutaria.LINQ_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
