@@ -7,7 +7,7 @@ namespace Frutaria.LINQ.Services
 
         private readonly AppDbContext appDbContext;
 
-        public FrutaService(AppDbContext appDbContext)
+        public CategoriaService(AppDbContext appDbContext)
         {
             this.appDbContext = appDbContext;
         }
