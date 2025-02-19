@@ -1,6 +1,15 @@
-﻿namespace Frutaria.LINQ.Services
+﻿using Frutaria.LINQ.Interfaces;
+
+namespace Frutaria.LINQ.Services
 {
-    public class CategoriaService
+    public class CategoriaService : ICategoriaService 
     {
+
+        private readonly AppDbContext appDbContext;
+
+        public FrutaService(AppDbContext appDbContext)
+        {
+            this.appDbContext = appDbContext;
+        }
     }
 }

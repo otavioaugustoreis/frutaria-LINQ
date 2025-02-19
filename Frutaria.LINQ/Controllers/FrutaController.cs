@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Frutaria.LINQ.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Frutaria.LINQ.Controllers
 {
@@ -8,5 +9,12 @@ namespace Frutaria.LINQ.Controllers
     [Route("[Controller]")]
     public class FrutaController : ControllerBase
     {
+
+        private readonly FrutaService frutaService;
+
+        public FrutaController(FrutaService frutaService)
+        {
+            this.frutaService = frutaService;
+        }
     }
 }
