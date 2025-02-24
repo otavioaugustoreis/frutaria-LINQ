@@ -14,39 +14,65 @@ namespace Frutaria.LINQ.Services
             this.appDbContext = appDbContext;
         }
 
-        public Task<List<FrutaEntity>> GetFrutaAgrupadaPorCategoriaOrdenadaPeloNomeCategoria(CategoriaEntity categoriaEntity, string letra)
+        public async Task<CategoriaEntity> GetCategoriaPorIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await appDbContext._Categorias.FindAsync(id);
+        }
+        public async Task<List<FrutaEntity>> GetFrutas() 
+        {
+            return await appDbContext._Frutas
+                .Include(p => p.Categoria)
+                .ToListAsync();
         }
 
-        public Task<List<FrutaEntity>> GetFrutaPorCategoriaContendoALetra(CategoriaEntity categoriaEntity, string letra)
+        public async  Task<List<FrutaEntity>> GetFrutaAgrupadaPorCategoriaOrdenadaPeloNomeCategoria()
         {
-            throw new NotImplementedException();
+            var frutasAgrupadas = await appDbContext._Frutas
+                    .Include(f => f.Categoria)
+                    .OrderBy(f => f.Categoria.Nome) 
+                    .ToListAsync();
+
+            return frutasAgrupadas;
         }
 
-        public Task<List<FrutaEntity>> GetFrutaPorCategoriaETerminaComLetra(CategoriaEntity categoriaEntity, string letra)
+        public async Task<List<FrutaEntity>> GetFrutaPorCategoriaContendoALetra(CategoriaEntity categoriaEntity, string letra)
         {
-            throw new NotImplementedException();
+            IQueryable<FrutaEntity> queryable = appDbContext._Frutas
+                                                             .Where(p => p.Categoria == categoriaEntity
+                                                             && p.Nome.Contains(letra));
+            return await  queryable.ToListAsync();
         }
 
-        public Task<List<FrutaEntity>> GetFrutaPorComecoDaLetra(string letra)
+        public async  Task<List<FrutaEntity>> GetFrutaPorCategoriaETerminaComLetra(CategoriaEntity categoriaEntity, string letra)
         {
-            throw new NotImplementedException();
+            IQueryable<FrutaEntity> queryable = appDbContext._Frutas
+                                                             .Where(p => p.Categoria == categoriaEntity
+                                                             && p.Nome.EndsWith(letra));
+            return await queryable.ToListAsync();
         }
 
-        public Task<List<FrutaEntity>> GetFrutasComNomeComposto()
+        public async Task<List<FrutaEntity>> GetFrutaPorComecoDaLetra(string letra)
         {
-            throw new NotImplementedException();
+            IQueryable<FrutaEntity> queryable = appDbContext._Frutas
+                                                             .Where(p => p.Nome.StartsWith(letra));
+            return await queryable.ToListAsync();
         }
 
-        public Task<List<FrutaEntity>> GetFrutasComQuantidadeDeLetra(string letra)
+        public async  Task<List<FrutaEntity>> GetFrutasComQuantidadeDeLetra(string letra)
         {
-            throw new NotImplementedException();
+            IQueryable<FrutaEntity> queryable =  appDbContext._Frutas.Where(p => p.Nome.Contains(""));
+
+            return await queryable.ToListAsync();
         }
 
-        public Task<List<FrutaEntity>> GetFrutasPorCategoria(CategoriaEntity categoria)
+        public async Task<List<FrutaEntity>> GetFrutasPorCategoria(CategoriaEntity categoriaEntity)
         {
-            throw new NotImplementedException();
+            IQueryable<FrutaEntity> queryable = appDbContext._Frutas
+                .Include(p => p.Categoria)    
+                .Where(p => p.Categoria == categoriaEntity);                                                 
+         
+            return await queryable.ToListAsync();
         }
     }
 }
+

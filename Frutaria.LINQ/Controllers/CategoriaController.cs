@@ -16,7 +16,5 @@ namespace Frutaria.LINQ.Controllers
             this.categoriaService = categoriaService;
         }
 
-        [HttpGet]
-        public async 
     }
 }
