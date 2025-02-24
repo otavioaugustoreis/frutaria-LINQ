@@ -14,6 +14,39 @@ namespace Frutaria.LINQ.Services
             this.appDbContext = appDbContext;
         }
 
-        public async Task<List<FrutaEntity>> getAll() => await appDbContext._Frutas.ToListAsync();
+        public Task<List<FrutaEntity>> GetFrutaAgrupadaPorCategoriaOrdenadaPeloNomeCategoria(CategoriaEntity categoriaEntity, string letra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<FrutaEntity>> GetFrutaPorCategoriaContendoALetra(CategoriaEntity categoriaEntity, string letra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<FrutaEntity>> GetFrutaPorCategoriaETerminaComLetra(CategoriaEntity categoriaEntity, string letra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<FrutaEntity>> GetFrutaPorComecoDaLetra(string letra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<FrutaEntity>> GetFrutasComNomeComposto()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<FrutaEntity>> GetFrutasComQuantidadeDeLetra(string letra)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<FrutaEntity>> GetFrutasPorCategoria(CategoriaEntity categoria)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
